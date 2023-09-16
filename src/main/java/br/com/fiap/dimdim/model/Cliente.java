@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(
-    name = "tb_alimento",
+    name = "tb_cliente",
     uniqueConstraints = {
     @UniqueConstraint(
         name = "uk_cpf_cliente",

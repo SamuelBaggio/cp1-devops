@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
 
 import br.com.fiap.dimdim.model.Cliente;
 import br.com.fiap.dimdim.model.Endereco;
 import br.com.fiap.dimdim.repository.ClienteRepository;
 import br.com.fiap.dimdim.repository.EnderecoRepository;
 
+@Configuration
 public class DatabaseSeeder implements CommandLineRunner {
 
     @Autowired

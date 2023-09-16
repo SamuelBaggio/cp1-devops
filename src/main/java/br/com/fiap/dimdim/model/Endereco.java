@@ -23,10 +23,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
-
-import org.springframework.data.domain.Pageable;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -85,15 +81,5 @@ public class Endereco {
     @NotBlank @Size(min = 2,  max = 2)
     @Column(name = "estado_endereco")
     private String estado;
-
-    public EntityModel<Endereco> toEntityModel(){
-        return EntityModel.of(
-            this,
-            linkTo(methodOn(EnderecoController.class).show(id)).withSelfRel(),
-            linkTo(methodOn(EnderecoController.class).destroy(id)).withRel("delete"),
-            linkTo(methodOn(EnderecoController.class).index(null, Pageable.unpaged())).withRel("all"),
-            linkTo(methodOn(ClienteController.class).show(this.getCliente().getId())).withRel("cliente")
-        );
-    }
 
 }
